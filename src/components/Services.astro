@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+const services = [
+	{
+		image: import('@/assets/services/1.png'),
+		title: 'The Best Carpet Cleaning Service',
+		description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
+	},
+	{
+		image: import('@/assets/services/2.png'),
+		title: 'Upholstery Cleaning',
+		description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
+	},
+	{
+		image: import('@/assets/services/3.png'),
+		title: 'Tile & Grout Cleaning',
+		description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
+	},
+	{
+		image: import('@/assets/services/4.png'),
+		title: 'Carpet Repairs and Re-Stretching',
+		description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
+	},
+]
+---
+
+<section id='services' class='py-10 sm:py-20'>
+	<div class='mb-8 sm:mb-10 flex items-center justify-between'>
+		<h2 class='text-3xl sm:text-5xl font-bold text-primary'>Services</h2>
+		<div class='embla__controls hidden sm:block'>
+			<div class='embla__buttons flex items-center gap-2'>
+				<button class='embla__button--prev grid size-14 place-items-center rounded-full bg-blue/60 text-white transition-colors disabled:bg-blue/20 disabled:text-blue'>
+					<ChevronLeft />
+				</button>
+				<button class='embla__button--next grid size-14 place-items-center rounded-full bg-blue/60 text-white transition-colors disabled:bg-blue/20 disabled:text-blue'>
+					<ChevronRight />
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class='embla'>
+		<div class='embla__viewport'>
+			<div class='embla__container flex items-center gap-5 md:gap-8'>
+				{
+					services.map(item => (
+						<div class='embla__slide min-w-0 flex-[0_0_90%] sm:flex-[0_0_50%] md:flex-[0_0_35%]'>
+							<Image src={item.image} alt={item.title} class='mb-5 h-[135px] sm:h-[210px] w-full overflow-hidden rounded-lg object-cover' />
+							<h3 class='mb-4 text-lg sm:text-2xl font-bold text-primaryDark'>{item.title}</h3>
+							<p class='sm:text-lg text-gray'>{item.description}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	import '@/components/ui/embla/index'
+</script>

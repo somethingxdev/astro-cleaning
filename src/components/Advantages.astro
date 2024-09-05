@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets'
+
+const items = [
+	{
+		image: import('@/assets/garantee.png'),
+		title: '30 Day Spot Free Guarantee!',
+		description: 'Every company that I know of has a guarantee, normally referred to as “Satisfaction Guarant...',
+	},
+	{
+		image: import('@/assets/moving.png'),
+		title: 'Moving?',
+		description: 'We have cleaned thousands of empty homes and apartments for tenants, landlords...',
+	},
+	{
+		image: import('@/assets/star.png'),
+		title: '10 Step Carpet Cleaning Process',
+		description: 'The Modern Ten-Step Carpet Cleaning Process leaves your carpets cleaner and softer...',
+	},
+]
+---
+
+<section id='advantages' class='py-10 md:py-20'>
+	<div class='grid sm:grid-cols-2 lg:grid-cols-3 gap-7'>
+		{
+			items.map(item => (
+				<div class='flex flex-col items-center'>
+					<Image src={item.image} alt='advantage' class='mb-5' quality={100} />
+					<h2 class='text-xl sm:text-2xl text-primary font-bold mb-4 text-center'>{item.title}</h2>
+					<p class='sm:text-lg text-gray line-clamp-2 text-center mt-auto mx-auto max-w-[400px]'>{item.description}</p>
+				</div>
+			))
+		}
+	</div>
+</section>
