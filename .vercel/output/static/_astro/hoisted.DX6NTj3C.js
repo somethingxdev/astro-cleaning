@@ -1,0 +1,1 @@
+const n=document.querySelector(".dropdown-parent"),e=document.querySelector(".dropdown");n.addEventListener("click",t=>{e.classList.toggle("!opacity-100"),e.classList.toggle("!visible")});document.addEventListener("click",t=>{const o=t.target;!e.contains(o)&&!n.contains(o)&&e.classList.remove("!opacity-100","!visible")});
