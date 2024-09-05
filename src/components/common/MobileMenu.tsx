@@ -26,13 +26,13 @@ export function MobileMenu({ children }) {
                   <AccordionContent>
                     <ul>
                       <li className="mb-3 text-base text-primary">
-                        <a href="#">Carpet Cleaning</a>
+                        <a href="/cleaning/carpet">Carpet Cleaning</a>
                       </li>
                       <li className="mb-3 text-base text-primary">
-                        <a href="#">Upholstery Cleaning</a>
+                        <a href="/cleaning/upholstery">Upholstery Cleaning</a>
                       </li>
                       <li className="mb-3 text-base text-primary">
-                        <a href="#">Tile & Grout Cleaning</a>
+                        <a href="/cleaning/tile-grout">Tile & Grout Cleaning</a>
                       </li>
                       <li className="text-base text-primary">
                         <a href="#">
