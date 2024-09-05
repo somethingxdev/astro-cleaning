@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets'
+const { content, image } = Astro.props
+---
+
+<div class="grid items-start gap-10 py-10 md:grid-cols-[auto_auto] lg:grid-cols-[auto_500px]">
+  <div class="prose lg:prose-lg prose-p:text-base prose-headings:text-primary">
+    <slot />
+  </div>
+  <div class="sticky top-40">
+    <Image src={image} alt="image" quality={100} class='w-full rounded-2xl object-cover' />
+  </div>
+</div>

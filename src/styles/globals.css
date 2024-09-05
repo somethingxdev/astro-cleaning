@@ -5,4 +5,18 @@
   :root {
     --radius: 0.5rem
   }
+  p {
+    @apply text-gray leading-6
+  }
+  h2, h3 {
+    @apply text-primary font-bold
+  }
+}
+
+
+.embla__dot {
+  @apply size-3 rounded-full bg-white/40
+}
+.embla__dot--selected {
+  @apply bg-white
 }
