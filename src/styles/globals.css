@@ -13,6 +13,20 @@
   }
 }
 
+.grid-container .content {
+  @apply prose prose-headings:text-primary prose-strong:text-gray prose-p:text-base prose-p:leading-6 prose-img:!mt-0 prose-img:w-full prose-img:rounded-2xl prose-img:object-cover
+}
+.grid-container .content:first-child {
+  @apply lg:prose-lg
+}
+
+
+.grid-container .content h1:first-of-type, 
+.grid-container .content h2:first-of-type, 
+.grid-container .content h3:first-of-type {
+  @apply !mt-0;
+}
+
 
 .embla__dot {
   @apply size-3 rounded-full bg-white/40

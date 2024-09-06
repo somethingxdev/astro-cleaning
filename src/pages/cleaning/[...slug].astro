@@ -1,0 +1,31 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import type { InferGetStaticParamsType, InferGetStaticPropsType, GetStaticPaths } from 'astro'
+import { getCollection, getEntry } from 'astro:content'
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('services')
+  return posts.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { draft: post.data.draft, title: post.data.title },
+    }
+  })
+}) satisfies GetStaticPaths
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>
+
+const { slug } = Astro.params as Params
+const { title } = Astro.props
+
+const post = await getEntry('services', slug)
+const { Content } = await post.render()
+---
+
+<Layout title={title}>
+  <div class="py-20">
+    <Content />
+  </div>
+</Layout>
+<script>
+  import '@/components/ui/embla/index'
+</script>

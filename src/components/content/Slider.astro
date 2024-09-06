@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+const { items } = Astro.props
+---
+
+<div class="embla not-prose" data-fade>
+  <div class="embla__viewport relative">
+    <div class="embla__container flex items-center gap-5 md:gap-8">
+      {items.map(item => (
+				<div class="embla__slide min-w-0 flex-[0_0_100%]">
+        <Image src={item.image} width={738} height={432} alt="image" class="h-auto w-full overflow-hidden rounded-lg object-cover sm:h-[432px]" />
+      </div>
+			))}
+    </div>
+    <div class="embla__dots absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-wrap items-center gap-2"></div>
+  </div>
+</div>
