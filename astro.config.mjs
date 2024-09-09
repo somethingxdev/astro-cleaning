@@ -6,10 +6,11 @@ import markdoc from '@astrojs/markdoc'
 import keystatic from '@keystatic/astro'
 import AutoImport from 'astro-auto-import'
 import mdx from '@astrojs/mdx'
+import node from '@astrojs/node';
 
 export default defineConfig({
+  site: ',https://www.carpetcleaningchico.com',
   output: 'hybrid',
-  experimental: { contentLayer: true },
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
@@ -27,4 +28,8 @@ export default defineConfig({
     }),
     mdx(),
   ],
+
+  adapter: node({
+    mode: 'standalone',
+  }),
 })
