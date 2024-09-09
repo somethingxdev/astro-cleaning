@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 const steps = ['Specialty stains', 'Deodorizer', 'Green Certified Neutralizer', 'Grooming',  'Moving furnitured', 'Commercial grade Vacuuming',  'Power Scrubbing', 'Traffic lane and spot treatments']
 ---
 
-<section id='steps' class='flex items-stretch gap-10 py-10'>
+<section id='steps' class='flex items-stretch gap-10 py-10 not-prose'>
 	<Image src={import('@/assets/steps.png')} alt='No Hidden surprise charges!' class='hidden lg:block max-w-sm xl:max-w-full object-cover rounded-2xl' />
 	<div class='flex flex-col items-start gap-5'>
 		<p class='rounded-lg bg-blue/20 px-5 py-2.5 uppercase text-primary'>No Hidden surprise charges!</p>

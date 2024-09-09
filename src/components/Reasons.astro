@@ -30,15 +30,13 @@ const reasons = [
 const { title, items = reasons, image } = Astro.props
 ---
 
-<section class="grid items-start md:grid-cols-[auto_auto] lg:grid-cols-[auto_500px] gap-10 py-10 md:py-20">
+<section class="grid items-start gap-10 py-10 md:grid-cols-[auto_auto] md:py-20 lg:grid-cols-[auto_500px]">
   <div class="max-w-3xl">
     <h2 class="mb-6 text-2xl font-bold text-primary sm:text-3xl">{title || '5 Reasons to Choose Modern Carpet Cleaning'}</h2>
-    <div class="mb-8">
-      {
-        <slot /> ||
-          "Choosing a carpet cleaning company here in Chico can be tough. Your inviting someone in your home which can always be a scary thing to do. At Modern Carpet Cleaning our belief is that we're the best choice for your carpet, tile and upholstery cleaning needs. Here are 5 reasons you should choose Modern Carpet Cleaning in Chico, CA."
-      }
-    </div>
+    <p class="mb-8">
+      Choosing a carpet cleaning company here in Chico can be tough. Your inviting someone in your home which can always be a scary thing to do. At Modern Carpet Cleaning our belief is that we're the
+      best choice for your carpet, tile and upholstery cleaning needs. Here are 5 reasons you should choose Modern Carpet Cleaning in Chico, CA.
+    </p>
     <ul>
       {
         items.map((item, index) => (
@@ -54,6 +52,6 @@ const { title, items = reasons, image } = Astro.props
     </ul>
   </div>
   <div class="sticky top-32 hidden md:block">
-    <Image src={image || import('@/assets/reasons.png')} alt="image" class='rounded-2xl object-cover' />
+    <Image src={image || import('@/assets/reasons.png')} alt="image" class="rounded-2xl object-cover" />
   </div>
 </section>

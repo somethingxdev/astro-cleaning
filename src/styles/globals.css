@@ -20,6 +20,11 @@
   @apply lg:prose-lg
 }
 
+.grid-container .content:last-child {
+  position: sticky;
+  top: 100px;
+}
+
 
 .grid-container .content h1:first-of-type, 
 .grid-container .content h2:first-of-type, 

@@ -5,12 +5,12 @@ import Rooms from '@/components/Rooms.astro'
 import Services from '@/components/Services.astro'
 import Steps from '@/components/Steps.astro'
 import Layout from '@/layouts/Layout.astro'
-import { getCollection } from "astro:content";
-const allPosts = await getCollection("services");
-console.log(allPosts)
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+  title="Modern Carpet Cleaning - Chico CA"
+  description="Call now for our $99 Special! Modern Carpet Cleaning in Chico, CA offers the best upholstery, tile, and carpet cleaning available. 30 Day Spot Free Guarantee!"
+>
   <Advantages />
   <Steps />
   <Services />

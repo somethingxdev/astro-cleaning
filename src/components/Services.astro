@@ -1,28 +1,8 @@
 ---
 import { Image } from 'astro:assets'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-const services = [
-  {
-    image: import('@/assets/services/1.png'),
-    title: 'The Best Carpet Cleaning Service',
-    description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
-  },
-  {
-    image: import('@/assets/services/2.png'),
-    title: 'Upholstery Cleaning',
-    description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
-  },
-  {
-    image: import('@/assets/services/3.png'),
-    title: 'Tile & Grout Cleaning',
-    description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
-  },
-  {
-    image: import('@/assets/services/4.png'),
-    title: 'Carpet Repairs and Re-Stretching',
-    description: 'Modern Carpet Cleaning of Chico has been providing carpet cleaning services to Chico CA and nearby areas for over 20 years.',
-  },
-]
+import { getCollection } from 'astro:content'
+const services = await getCollection('services')
 ---
 
 <section id="services" class="py-10 sm:py-20">
@@ -45,11 +25,12 @@ const services = [
       <div class="embla__container flex items-center gap-5 md:gap-8">
         {
           services.map((item) => (
-            <div class="embla__slide min-w-0 flex-[0_0_90%] sm:flex-[0_0_50%] md:flex-[0_0_35%]">
-              <Image src={item.image} alt={item.title} class="mb-5 h-[135px] w-full overflow-hidden rounded-lg object-cover sm:h-[210px]" />
-              <h3 class="mb-4 text-lg font-bold text-primaryDark sm:text-2xl">{item.title}</h3>
-              <p class="sm:text-lg">{item.description}</p>
-            </div>
+            <a href={item.slug} class="embla__slide group min-w-0 flex-[0_0_90%] sm:flex-[0_0_50%] md:flex-[0_0_35%]">
+              {/* @ts-ignore */}
+              {item.data.image && <Image src={item.data.image} alt={item.data.title} class="mb-5 h-[135px] w-full overflow-hidden rounded-lg object-cover sm:h-[210px]" />}
+              <h3 class="mb-4 text-lg font-bold text-primaryDark transition-colors group-hover:text-blue sm:text-2xl">{item.data.title}</h3>
+              <p class="line-clamp-3 sm:text-lg">{item.data.meta.description}</p>
+            </a>
           ))
         }
       </div>

@@ -10,10 +10,16 @@ export default config({
       slugField: 'title',
       path: 'src/content/services/*',
       entryLayout: 'content',
+      
       format: { contentField: 'content' },
       schema: {
-        draft: fields.checkbox({ label: 'draft', defaultValue: true }),
-        title: fields.slug({ name: { label: 'Title' } }),
+        draft: fields.checkbox({ label: 'Опубликовать', defaultValue: true }),
+        title: fields.slug({ name: { label: 'Заголовок' }, slug: {label: 'Ссылка на страницу'} }),
+        image: fields.image({
+          label: 'Заглавное изображение',
+          directory: 'src/assets/services',
+          publicPath: '@assets/services/',
+        }),
         content: fields.mdx({
           label: 'Content',
           options: {
@@ -65,13 +71,29 @@ export default config({
                 ),
               },
             }),
+            Reasons: block({
+              label: 'Reasons',
+              schema: {},
+            }),
           },
         }),
-        image: fields.image({
-          label: 'Image',
-          directory: 'src/assets/services',
-          publicPath: '@assets/services/',
-        }),
+        meta: fields.object(
+          {
+            title: fields.text({
+              label: 'Заголовок',
+              validation: { isRequired: true },
+            }),
+            description: fields.text({
+              label: 'Описание',
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+          },
+          {
+            label: 'SEO',
+            description: 'Тут что-то пишется, чтобы Олег счастлив был',
+          },
+        ),
       },
     }),
   },

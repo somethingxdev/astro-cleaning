@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+import Reasons from '@/components/Reasons.astro'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+  title="Contact - The Best Carpet Cleaning Service in Chico CA!"
+  description="Thank you for your interest in our service. Please call +1 (323)-330-0262 to get your free in-home estimate. You can also fill out the form on this page."
+>
+  <div class="py-10 md:py-24">
+    <div class="grid items-stretch gap-5 md:grid-cols-[auto_auto]">
+      <div class="flex flex-col gap-5 rounded-xl bg-white p-5 md:p-10">
+        <h2 class="text-3xl font-bold text-primary">Contacts</h2>
+        <p class="max-w-[585px] text-balance">
+          Thank you for your interest in our services. Please call us at <br /><a class="font-bold text-black transition-colors hover:text-blue" href="tel:+13233300262 ">+1 (323)-330-0262 </a> to get your
+          free in-home estimate. You can also fill out the form below. We will get in touch with you within 24 hours.
+        </p>
+        <div class="mt-auto max-w-[275px]">
+          <p class="font-bold">Modern Carpet Cleaning 562 Manzanita Ave #11, Chico, CA. Phone: +1 (323)-330-0262</p>
+        </div>
+      </div>
+      <Image src={import('@assets/contacts.png')} alt="image" class="w-full rounded-xl object-cover" />
+    </div>
+    <Reasons />
+  </div>
+</Layout>
+
+<script>
+  import '@/components/ui/embla/index'
+</script>

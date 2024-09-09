@@ -13,13 +13,13 @@ importers:
         version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
       '@astrojs/markdoc':
         specifier: ^0.11.4
-        version: 0.11.4(@types/react@18.3.5)(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react@18.3.1)
+        version: 0.11.4(@types/react@18.3.5)(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react@18.3.1)
       '@astrojs/mdx':
         specifier: ^3.1.5
-        version: 3.1.5(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
+        version: 3.1.5(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
       '@astrojs/node':
         specifier: ^8.3.3
-        version: 8.3.3(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
+        version: 8.3.3(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
       '@astrojs/react':
         specifier: ^3.6.2
         version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.3(@types/node@18.19.50))
@@ -28,15 +28,18 @@ importers:
         version: 3.1.6
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)
+        version: 5.1.0(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)
+      '@astrolib/seo':
+        specifier: 1.0.0-beta.5
+        version: 1.0.0-beta.5(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
       '@fontsource/inter':
         specifier: ^5.0.20
         version: 5.0.20
       '@keystatic/astro':
         specifier: ^5.0.0
-        version: 5.0.0(@keystatic/core@0.5.33(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.0.0(@keystatic/core@0.5.33(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@keystatic/core':
-        specifier: latest
+        specifier: ^0.5.33
         version: 0.5.33(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-accordion':
         specifier: ^1.2.0
@@ -54,11 +57,14 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       astro:
-        specifier: ^4.15.2
-        version: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+        specifier: ^4.15.4
+        version: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
       astro-auto-import:
         specifier: ^0.4.2
-        version: 0.4.2(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
+        version: 0.4.2(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
+      astro-seo-meta:
+        specifier: ^4.1.1
+        version: 4.1.1(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -202,6 +208,11 @@ packages:
 
   '@astrojs/yaml2ts@0.2.1':
     resolution: {integrity: sha512-CBaNwDQJz20E5WxzQh4thLVfhB3JEEGz72wRA+oJp6fQR37QLAqXZJU0mHC+yqMOQ6oj0GfRPJrz6hjf+zm6zA==}
+
+  '@astrolib/seo@1.0.0-beta.5':
+    resolution: {integrity: sha512-poBnSB9TzkmOyf+PoMR642zVLSoVVZbUIKnYDHXHrKi/upkaegNiaBdVRsyqaQC93SIxxyagQrIbLRtnSJT4Xg==}
+    peerDependencies:
+      astro: ^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0 || ^4.0.0
 
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
@@ -1793,8 +1804,13 @@ packages:
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
 
-  astro@4.15.3:
-    resolution: {integrity: sha512-zwO8H+vnNYbrdKz0Pkh2a4B/JK06JUvI18w+FxL3B5u4jqPB/SU+LH9XVUUWdNQsyJ/DBHKAf0LDK0RmwxXQEw==}
+  astro-seo-meta@4.1.1:
+    resolution: {integrity: sha512-hZdqKLAgjRTW4LPcYMGfH5VuA4Zidv6gYmJgw0Dw7QmPExuSLnEqFHLreRzOdQibqH4JD6PHrHoIHrUb3HUs2A==}
+    peerDependencies:
+      astro: ^4.0.0
+
+  astro@4.15.4:
+    resolution: {integrity: sha512-wqy+m3qygt9DmCSqMsckxyK4ccCUFtti2d/WlLkEpAlqHgyDIg20zRTLHO2v/H4YeSlJ8sAcN0RW2FhOeYbINg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3942,13 +3958,13 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@astrojs/markdoc@0.11.4(@types/react@18.3.5)(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react@18.3.1)':
+  '@astrojs/markdoc@0.11.4(@types/react@18.3.5)(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react@18.3.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/markdown-remark': 5.2.0
       '@astrojs/prism': 3.1.0
       '@markdoc/markdoc': 0.4.0(@types/react@18.3.5)(react@18.3.1)
-      astro: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
       esbuild: 0.21.5
       github-slugger: 2.0.0
       gray-matter: 4.0.3
@@ -3981,12 +3997,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.5(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))':
+  '@astrojs/mdx@3.1.5(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))':
     dependencies:
       '@astrojs/markdown-remark': 5.2.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.12.1
-      astro: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       gray-matter: 4.0.3
@@ -4001,9 +4017,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@8.3.3(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))':
+  '@astrojs/node@8.3.3(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))':
     dependencies:
-      astro: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -4031,9 +4047,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.0(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)':
+  '@astrojs/tailwind@5.1.0(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)':
     dependencies:
-      astro: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
       autoprefixer: 10.4.20(postcss@8.4.45)
       postcss: 8.4.45
       postcss-load-config: 4.0.2(postcss@8.4.45)
@@ -4056,6 +4072,10 @@ snapshots:
   '@astrojs/yaml2ts@0.2.1':
     dependencies:
       yaml: 2.5.1
+
+  '@astrolib/seo@1.0.0-beta.5(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))':
+    dependencies:
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -4628,12 +4648,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@keystatic/astro@5.0.0(@keystatic/core@0.5.33(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@keystatic/astro@5.0.0(@keystatic/core@0.5.33(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@keystatic/core': 0.5.33(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react': 18.3.5
-      astro: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
       cookie: 0.5.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -6188,13 +6208,17 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-auto-import@0.4.2(astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)):
+  astro-auto-import@0.4.2(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)):
     dependencies:
       '@types/node': 18.19.50
       acorn: 8.12.1
-      astro: 4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
 
-  astro@4.15.3(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4):
+  astro-seo-meta@4.1.1(astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)):
+    dependencies:
+      astro: 4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4)
+
+  astro@4.15.4(@types/node@18.19.50)(rollup@4.21.2)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1

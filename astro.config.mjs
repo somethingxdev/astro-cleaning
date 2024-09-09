@@ -16,7 +16,6 @@ export default defineConfig({
     sitemap(),
     markdoc(),
     keystatic(),
-
     AutoImport({
       imports: [
         './src/components/content/GridItem.astro',
