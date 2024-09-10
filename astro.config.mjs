@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx'
 import node from '@astrojs/node';
 
 export default defineConfig({
-  site: ',https://www.carpetcleaningchico.com',
+  site: 'https://www.carpetcleaningchico.com',
   output: 'hybrid',
   integrations: [
     react(),
